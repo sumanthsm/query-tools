@@ -90,7 +90,7 @@ class QueryForm extends React.Component {
                     </Grid>
                     <Grid item xs={12} container justify="left" style={{ padding: '0px 20px' }}>
                         <div style={{ paddingTop: '15px' }}>
-                            <span style={{ padding: '20px 0px 10px 5px', fontSize: '15px', fontWeight: 'bold' }}>Server Details</span>
+                            <span style={{ padding: '20px 0px 10px 25px', fontSize: '20px', fontWeight: 'bold' }}>Server Details</span>
                         </div>
                     </Grid>
                     <Grid item xs={12} container justify="left" style={{ padding: '0px 20px' }}>
@@ -150,6 +150,20 @@ class QueryForm extends React.Component {
                                 />
                             </div>
                         </Grid>
+                    </Grid>
+                    <Grid item xs={12} container justify="left" style={{ padding: '0px 20px' }}>
+                        <div style={{ padding: '10px 5px', width: '100%' }}>
+                            <div>
+                                <label htmlFor="sqlQuery" style={{ textAlign: 'left', fontSize: '14px', fontWeight: 'bold' }}>SQL Query*</label>
+                            </div>
+                            <InputBase
+                                id="sqlQuery"
+                                value={''}
+                                variant="outlined"
+                                className={classes.inputBase}
+                                onChange={''}
+                            />
+                        </div>
                     </Grid>
                     <div style={{ padding: '30px 5px', height: '80px' }}>
                         <Button

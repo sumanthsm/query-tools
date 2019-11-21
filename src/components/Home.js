@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Header from './Header';
 import QueryForm from './QueryForm';
+import ApprovalForm from './ApprovalForm';
 
 const styles = theme => ({
     root: {
@@ -62,6 +63,7 @@ class Home extends React.Component {
                 <main className={classes.content}>
                     {/* <Login /> */}
                     <QueryForm />
+                    {/* <ApprovalForm /> */}
                 </main>
             </div>
         );
