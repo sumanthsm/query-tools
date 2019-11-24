@@ -63,7 +63,8 @@ class Login extends React.Component {
     };
 
     handleSubmit = () => {
-
+        localStorage.setItem("isLogin", true);
+        this.props.handleLogin(true);
     }
 
     render() {
@@ -90,7 +91,7 @@ class Login extends React.Component {
                                 labelId="role"
                                 id="selectRole"
                                 value={this.state.role}
-                                onChange={''}
+                                onChange={this.handleChange}
                             >
                                 <MenuItem value={"qa"}>QA</MenuItem>
                                 <MenuItem value={"developer"}>Developer</MenuItem>
@@ -102,7 +103,7 @@ class Login extends React.Component {
                         <Button
                             variant="outlined"
                             style={{ margin: '25px 10px 0px 10px', backgroundColor: '#666666', color: 'white' }}
-                            onClick={''}
+                            onClick={this.handleSubmit}
                         >
                             <span style={{ padding: '0 5px', fontWeight: 'bold', fontSize: '12px' }}>Login</span>
                         </Button>

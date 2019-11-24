@@ -4,6 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Header from './Header';
 import QueryForm from './QueryForm';
 import ApprovalForm from './ApprovalForm';
+import Login from './Login';
 
 const styles = theme => ({
     root: {
@@ -41,8 +42,14 @@ class Home extends React.Component {
         super(props);
         this.state = {
             value : 0,
-            index : 0        
+            index : 0,
+            isLogin : false
+
         }
+    }
+    componentDidMount(){
+        const isLogin = localStorage.getItem("isLogin");
+        this.setState({isLogin});
     }
 
     handleChange = (event, newValue) => {
@@ -53,16 +60,20 @@ class Home extends React.Component {
         this.setState({index: index});
       }
 
+      handleLogin = (isLogin) => {
+        this.setState({isLogin});
+      }
+
     render() {
         const { classes } = this.props;
-        const {value, index} = this.state;
+        const {value, index, isLogin} = this.state;
         return (
             <div className={classes.root}>
                 <CssBaseline />
                 <Header />
                 <main className={classes.content}>
-                    {/* <Login /> */}
-                    <QueryForm />
+                {!isLogin && <Login handleLogin={this.handleLogin}/>}
+                {isLogin && <QueryForm />}
                     {/* <ApprovalForm /> */}
                 </main>
             </div>
